@@ -1,0 +1,44 @@
+/* Reset margins */
+body, h1, h2, p, ul {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.profile-pic {
+  width: 120px;
+  border-radius: 50%;
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #007acc;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+section {
+  margin: 40px 0;
+}
+
+footer {
+  text-align: center;
+  color: #777;
+  margin-top: 40px;
+}
