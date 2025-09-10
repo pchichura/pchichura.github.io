@@ -5,12 +5,11 @@ body, h1, h2, p, ul {
 }
 
 body {
+  margin: 0;
   font-family: Arial, sans-serif;
   line-height: 1.6;
   color: #333;
-  max-width: 800px;
-  margin: auto;
-  padding: 20px;
+  padding-top: 70px;
 }
 
 header {
@@ -43,34 +42,51 @@ footer {
   margin-top: 40px;
 }
 
+/* Page content wrapper */
+.content {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
 /* Floating header */
 .site-header {
   position: fixed;       /* stays at the top */
   top: 0;
   left: 0;
   width: 100%;
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;  /* left + right sides */
   align-items: center;
-  background: white;
+  background: #c1c8d6;
   padding: 10px 30px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   z-index: 1000;
+  max-width: none;
 }
 
 /* Push content below the header */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  padding-top: 70px;   /* prevent overlap */
+  padding-top: 85px;   /* prevent overlap */
 }
 
 /* Left icons */
+.header-left a {
+  display: inline-block;
+  margin-right: 5px;
+  text-decoration: none;
+  border: none;
+  outline: none;
+}
 .header-left a img {
   width: 24px;
   height: 24px;
-  margin-right: 15px;
   transition: transform 0.2s;
+  vertical-align: middle;
+  display: inline-block;
 }
 .header-left a img:hover {
   transform: scale(1.2);
@@ -78,7 +94,7 @@ body {
 
 /* Right nav links */
 .header-right a {
-  margin-left: 20px;
+  margin-left: 10px;
   text-decoration: none;
   color: #333;
   font-weight: bold;
@@ -86,4 +102,63 @@ body {
 }
 .header-right a:hover {
   color: #007acc;
+}
+
+/* Two-column layout for home page */
+.home-columns {
+  display: flex;
+  gap: 40px;          /* space between columns */
+  align-items: flex-start;
+}
+
+/* Left column: main text */
+.main-column {
+  flex: 3;            /* takes 3/4 of the space */
+}
+
+/* Right column: sidebar */
+.sidebar {
+  flex: 1;            /* takes 1/4 of the space */
+  max-width: 250px;   /* optional cap for readability */
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+/* Sidebar profile pic */
+.profile-pic-sidebar {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* Make it responsive on small screens */
+@media (max-width: 800px) {
+  .home-columns {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    max-width: 100%;
+  }
+}
+
+/* Center column of header: stack name + tagline */
+.header-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* horizontally center text in column */
+  justify-content: center;
+}
+
+/* Optional: adjust font sizes */
+.header-center h1 {
+  margin: 0;
+  font-size: 1.9rem;   /* smaller than page H1 so it fits in header */
+}
+
+.header-center p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #555;
 }
