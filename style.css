@@ -37,9 +37,13 @@ section {
 }
 
 footer {
+  background: #c1c8d6;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
   text-align: center;
   color: #777;
   margin-top: 40px;
+  padding: 0;
+  width: 100%;
 }
 
 /* Page content wrapper */
@@ -71,25 +75,6 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   padding-top: 85px;   /* prevent overlap */
-}
-
-/* Left icons */
-.header-left a {
-  display: inline-block;
-  margin-right: 5px;
-  text-decoration: none;
-  border: none;
-  outline: none;
-}
-.header-left a img {
-  width: 24px;
-  height: 24px;
-  transition: transform 0.2s;
-  vertical-align: middle;
-  display: inline-block;
-}
-.header-left a img:hover {
-  transform: scale(1.2);
 }
 
 /* Right nav links */
@@ -127,9 +112,19 @@ body {
 
 /* Sidebar profile pic */
 .profile-pic-sidebar {
+  display: block;
+  margin: 0 auto 8px auto;
+  max-width: 180px;   /* Restore to a larger size for desktop */
   width: 100%;
-  border-radius: 8px;
-  margin-bottom: 15px;
+  height: auto;
+  border-radius: 8px; /* Slightly rounded corners, not a circle */
+}
+
+/* Responsive: smaller image on mobile */
+@media (max-width: 800px) {
+  .profile-pic-sidebar {
+    max-width: 180px;
+  }
 }
 
 /* Hide hamburger by default, show nav links */
@@ -177,6 +172,10 @@ body {
 
   .sidebar {
     max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    float: none;
   }
 }
 
@@ -198,5 +197,158 @@ body {
   margin: 0;
   font-size: 0.9rem;
   color: #555;
+}
+
+/* Footer 2x3 grid */
+.site-footer {
+  padding: 18px 30px;
+  max-width: 400px;      /* Set a max width for the footer content */
+  margin: 0 auto;        /* Center the footer content block */
+  text-align: left;      /* Left-align all text inside the footer */
+}
+
+.footer-copyright {
+  text-align: left;
+  color: #333;
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+}
+
+.footer-email {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.footer-email a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #333;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.2s;
+}
+
+.footer-email a:hover {
+  color: #007acc;
+}
+
+.footer-email img {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.2s;
+}
+
+.footer-email a:hover img {
+  transform: scale(1.2);
+}
+
+.footer-social-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 30px;
+  justify-items: start;   /* Left-align grid items */
+  align-items: center;
+  max-width: 400px;
+  margin: 0;              /* Remove auto margin so it aligns with the rest */
+}
+
+.footer-item a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #333;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.2s;
+}
+
+.footer-item a:hover {
+  color: #007acc;
+}
+
+.footer-item img {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.2s;
+}
+
+.footer-item a:hover img {
+  transform: scale(1.2);
+}
+
+/* Responsive: stack social links on small screens */
+@media (max-width: 500px) {
+  .footer-social-grid {
+    grid-template-columns: 1fr;
+    gap: 8px 0;
+  }
+}
+
+/* Sidebar adjustments */
+.sidebar h3 {
+  margin-top: 10px;   /* Reduce space above */
+  margin-bottom: 6px; /* Reduce space below */
+}
+
+.sidebar-icon {
+  width: 16px;
+  height: 16px;
+  vertical-align: top;   /* Align icon with the top of the text */
+  margin-right: 4px;
+  margin-top: 3px;       /* Optional: tweak for better visual alignment */
+}
+
+/* Sidebar email link styles */
+.sidebar a {
+  display: inline-flex;
+  align-items: flex-start;   /* Align icon to the top of the text */
+  gap: 8px;
+  color: #222;
+  text-decoration: none;
+  font-size: 0.98rem;
+  transition: color 0.2s;
+}
+
+.sidebar a:hover {
+  color: #007acc;
+}
+
+.sidebar a .sidebar-icon {
+  width: 16px;
+  height: 16px;
+  vertical-align: top;
+  margin-right: 2px;
+  margin-top: 6px; /* Optional: tweak for better visual alignment */
+  transition: transform 0.2s;
+}
+
+.sidebar a:hover .sidebar-icon {
+  transform: scale(1.2);
+}
+
+/* Location section in sidebar */
+.sidebar-location {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin: 0 0 12px 0; /* Match the bottom margin to your sidebar <p> spacing */
+}
+
+.sidebar-location-icon {
+  flex-shrink: 0;
+}
+
+.sidebar-location-text {
+  display: inline-block;
+  color: #222;
+  font-size: 0.98rem;
+  line-height: 1.4;
+}
+
+/* Ensure consistent spacing for sidebar blocks */
+.sidebar .sidebar-location,
+.sidebar p {
+  margin-bottom: 6px; /* Ensures all sidebar blocks have the same spacing */
 }
 
