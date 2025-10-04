@@ -132,6 +132,43 @@ body {
   margin-bottom: 15px;
 }
 
+/* Hide hamburger by default, show nav links */
+.menu-toggle {
+  display: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    right: 1rem;
+    top: 60px; /* adjust as needed */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 1rem;
+    z-index: 100;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+}
+
 /* Make it responsive on small screens */
 @media (max-width: 800px) {
   .home-columns {
@@ -162,3 +199,4 @@ body {
   font-size: 0.9rem;
   color: #555;
 }
+

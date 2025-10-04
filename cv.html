@@ -29,12 +29,20 @@
     <h1>CV</h1>
 
     <div class="header-right">
-      <a href="index.html">Home</a>
-      <a href="research.html">Research</a>
-      <a href="publications.html">Publications</a>
-      <a href="talks.html">Talks</a>
-      <a href="projects.html">Projects</a>
-      <a href="cv.html">CV</a>
+      <!-- hamburger button (shown only on small screens) -->
+      <button class="menu-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle menu">
+        <span class="hamburger" aria-hidden="true">☰</span>
+      </button>
+
+      <!-- the nav links -->
+      <nav id="primary-navigation" class="nav-links" role="navigation">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="talks.html">Talks</a>
+        <a href="projects.html">Projects</a>
+        <a href="cv.html">CV</a>
+      </nav>
     </div>
   </header>
 
@@ -54,5 +62,18 @@
   <footer>
     <p>© 2025 Paul Chichura</p>
   </footer>
+
+  <script>
+    // Hamburger menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.getElementById('primary-navigation');
+
+    menuToggle.addEventListener('click', function() {
+      const expanded = this.getAttribute('aria-expanded') === 'true' || false;
+      this.setAttribute('aria-expanded', !expanded);
+      navLinks.classList.toggle('open');
+    });
+  </script>
+
 </body>
 </html>
