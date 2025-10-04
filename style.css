@@ -352,3 +352,9 @@ body {
   margin-bottom: 6px; /* Ensures all sidebar blocks have the same spacing */
 }
 
+/* Consistent spacing for all main body paragraphs */
+p {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
