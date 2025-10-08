@@ -361,9 +361,10 @@ p {
 /* Move content lists to the right so bullets sit right of paragraph text */
 .content main ul,
 .content main ol {
-  list-style-position: outside;         /* keep marker outside the text block */
-  padding-inline-start: 2rem;           /* space before the marker; increase to move right more */
-  margin: 0 0 1rem 0;                   /* vertical spacing, no extra left margin */
+  list-style-position: outside;
+  padding-inline-start: 2rem;
+  padding-left: 2rem;
+  margin: 0 0 1rem 0;
 }
 
 /* Optional: slightly tighten list item spacing */
