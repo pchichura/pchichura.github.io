@@ -358,3 +358,16 @@ p {
   margin-bottom: 1em;
 }
 
+/* Move content lists to the right so bullets sit right of paragraph text */
+.content main ul,
+.content main ol {
+  list-style-position: outside;         /* keep marker outside the text block */
+  padding-inline-start: 2rem;           /* space before the marker; increase to move right more */
+  margin: 0 0 1rem 0;                   /* vertical spacing, no extra left margin */
+}
+
+/* Optional: slightly tighten list item spacing */
+.content main li {
+  margin-bottom: 0.1rem;
+}
+
