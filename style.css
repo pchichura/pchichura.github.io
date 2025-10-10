@@ -70,7 +70,7 @@ html[data-theme="light"] {
 
 html[data-theme="dark"] {
   --bg: #1B1F23;
-  --surface: #071018;
+  --surface: #0b161d;
   --text: #e6eef6;
   --muted: #9aa6b2;
   --link: #8ab4ff;
