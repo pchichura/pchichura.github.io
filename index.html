@@ -9,17 +9,16 @@
 
 <body>
   <header class="site-header">
-
-    <h1>Paul Chichura</h1>
+    <div class="header-center">
+      <h1>Paul Chichura</h1>
+    </div>
 
     <div class="header-right">
-      <!-- hamburger button (shown only on small screens) -->
-      <button class="menu-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle menu">
-        <span class="hamburger" aria-hidden="true">☰</span>
-      </button>
+      <!-- hamburger/menu button (visible on mobile only) -->
+      <button class="menu-toggle" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open menu">☰</button>
 
-      <!-- the nav links -->
-      <nav id="primary-navigation" class="nav-links" role="navigation">
+      <!-- primary navigation -->
+      <nav id="primary-navigation" class="nav-links" role="navigation" aria-label="Primary">
         <a href="index.html">About</a>
         <a href="research.html">Research</a>
         <a href="publications.html">Publications</a>
@@ -27,6 +26,9 @@
         <a href="projects.html">Projects</a>
         <a href="cv.html">CV</a>
       </nav>
+
+      <!-- theme toggle stays at far right -->
+      <button id="theme-toggle" aria-pressed="false" aria-label="Toggle dark mode">⏾</button>
     </div>
   </header>
 
@@ -148,6 +150,32 @@
     </div>
   </footer>
 
+  <script>
+    // theme toggle: initialize from localStorage or system, and wire the button
+    (function() {
+      const root = document.documentElement;
+      const stored = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const initial = stored || (prefersDark ? 'dark' : 'light');
+      root.setAttribute('data-theme', initial);
+
+      const btn = document.getElementById('theme-toggle');
+      if (!btn) return;
+      const updateBtn = (theme) => {
+        btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+        btn.textContent = theme === 'dark' ? '☀︎' : '⏾';
+      };
+      updateBtn(initial);
+
+      btn.addEventListener('click', () => {
+        const cur = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+        const next = cur === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        updateBtn(next);
+      });
+    })();
+  </script>
   <script>
     // Hamburger menu toggle
     const menuToggle = document.querySelector('.menu-toggle');
