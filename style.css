@@ -367,8 +367,74 @@ p {
   margin: 0 0 1rem 0;
 }
 
-/* Optional: slightly tighten list item spacing */
+/* slightly tighten list item spacing */
 .content main li {
   margin-bottom: 0.1rem;
+}
+
+/* Talks page styles */
+.talk-year {
+  border-top: 1px solid #e0e0e0;
+  padding-top: 18px;
+  margin-top: 28px;
+}
+
+.talk-year h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  color: #222;
+  letter-spacing: 0.2px;
+}
+
+.talk {
+  padding: 10px 0;
+  border-bottom: 1px solid transparent;
+}
+
+.talk-title {
+  margin: 0 0 6px 0;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #111;
+}
+
+.talk-meta {
+  margin: 0 0 8px 0;
+  color: #555;
+  font-style: italic;
+  font-size: 0.95rem;
+}
+
+.talk-links {
+  margin-bottom: 8px;
+}
+
+.talk-link {
+  display: inline-block;
+  padding: 5px 9px;
+  margin-right: 8px;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+  color: #054a91;
+  background: rgba(5,74,145,0.06);
+  border: 1px solid rgba(5,74,145,0.12);
+  border-radius: 6px;
+  text-decoration: none;
+  transition: transform 0.12s ease, background 0.12s ease;
+}
+
+.talk-link:hover,
+.talk-link:focus {
+  transform: translateY(-2px);
+  background: rgba(5,74,145,0.12);
+  outline: none;
+}
+
+@media (max-width: 700px) {
+  .talk-links { display: flex; flex-wrap: wrap; gap: 6px; }
+  .talk-link { flex: 0 0 auto; }
+  .talk-title { font-size: 1rem; }
+  .talk-meta { font-size: 0.92rem; }
 }
 
