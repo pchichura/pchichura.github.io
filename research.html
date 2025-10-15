@@ -35,8 +35,148 @@
 
   <div class="content">
     <main>
-      <h2>Scientific Interests</h2>
-      <p>Under construction.</p>
+      <h2>Research</h2>
+      
+      <section id="intro">
+        <p>
+          My research lies at the intersection of astronomy, data science, and artificial intelligence.
+          I develop and apply novel computational techniques to expand the scientific reach of large astronomical surveys, with a special interest in time-varying events and telescope operations.
+          This page describes my past and current scientific interests:
+          <ul>
+            <li>
+              <strong><a href="research.html#ai-control">AI for Telescope Control</a>:</strong>
+              using AI/ML on telescope control systems to improve efficiency and data quality
+            </li>
+            <li>
+              <strong><a href="research.html#transients">Variable and Transient Astronomy</a>:</strong>
+              characterizing time-varying astrophysical sources in large datasets
+            </li>
+            <li>
+              <strong><a href="research.html#operations">Telescope Operations and Survey Design</a>:</strong>
+              building new survey strategies and calibration techniques
+            </li>
+          </ul>
+        </p>
+      </section>
+
+      <section id="ai-control">
+          <h2>AI for Telescope Control</h2>
+
+          <h3>
+            <strong>Guiding Question:</strong>
+            How can we use AI to make complex scientific instruments like telescopes operate more efficiently and accurately?
+          </h3>
+
+          <p>
+            A telescope's performance is not static; it's a dynamic system influenced by its environment and strategic goals.
+            My research focuses on building and deploying AI models that integrate directly with telescope control systems to enhance real-time performance and optimize long-term scientific strategy.
+          </p>
+          
+          <p>
+            My work with the <a href="https://pole.uchicago.edu/public/Home.html" target="_blank" rel="noopener noreferrer">South Pole Telescope (SPT)</a> addressed a decades-old problem where pointing accuracy was influenced by structural deformations caused by extreme Antarctic weather.
+            I developed and deployed <a href="https://en.wikipedia.org/wiki/XGBoost" target="_blank" rel="noopener noreferrer">XGBoost models</a> on the SPT control system to predict and correct these pointing errors in real time.
+            By engineering predictive features from a sensor suite, I built models that reduced the average pointing error by over 30% during <em>in situ</em> tests, an improvement that will enable future observations with the <a href="https://eventhorizontelescope.org/" target="_blank" rel="noopener noreferrer">Event Horizon Telescope</a>.
+            These results were <a href="https://ui.adsabs.harvard.edu/abs/2025JAI....1450001C/abstract" target="_blank" rel="noopener noreferrer">published in JAI</a>.
+          </p>
+
+          <p>
+            Currently, my research focuses on AI for survey <a href="https://en.wikipedia.org/wiki/Schedule_(disambiguation)" target="_blank" rel="noopener noreferrer">scheduling</a>, i.e. deciding when and where to point a telescope to maximize scientific return of observations.
+            Traditional survey scheduling relies on bespoke, hand-tuned algorithms, an approach that is inefficient for the multi-objective, resource-constrained environment of modern surveys.
+            I am applying <a href="https://en.wikipedia.org/wiki/reinforcement_learning" target="_blank" rel="noopener noreferrer">reinforcement learning</a> methods to design interpretable scheduling agents capable of dynamic decision-making.
+            This AI scheduler agent will help balance diverse science goals, adapt to changing observing conditions, and reduce the human cost of survey design.
+          </p>
+
+          <p>
+            <strong>Technical Skills:</strong>
+            Machine learning (XGBoost, Reinforcement Learning)
+            |
+            Real-Time Forecasting
+            |
+            Feature Engineering
+            |
+            Optimization & Resource Allocation
+            |
+            Model Deployment & Validation
+          </p>
+      </section>
+
+      <section id="transients">
+          <h2>Variable and Transient Astronomy</h2>
+          
+          <h3>
+            <strong>Guiding Question:</strong>
+            How can we reuse large, archival datasets to find and characterize time-varying astronomical events?
+          </h3>
+
+          <p>
+            The universe is full of objects that change, flash, or move over time, from the <a href="https://en.wikipedia.org/wiki/Supermassive_black_hole" target="_blank" rel="noopener noreferrer">supermassive black hole</a> at the center of <a href="https://en.wikipedia.org/wiki/Milky_Way" target="_blank" rel="noopener noreferrer">our galaxy</a> (<a href="https://en.wikipedia.org/wiki/Sagittarius_A*" target="_blank" rel="noopener noreferrer">Sagittarius A*</a>, or Sgr A*) to nearby <a href="https://en.wikipedia.org/wiki/Asteroid" target="_blank" rel="noopener noreferrer">asteroids</a>.
+            Detecting and analyzing these variable and moving sources requires sophisticated time-series analysis and signal processing, especially when the signals are buried in terabytes of data.
+          </p>
+
+          <p>
+            I led the first targeted analysis of asteroids in <a href="https://en.wikipedia.org/wiki/Cosmic_microwave_background" target="_blank" rel="noopener noreferrer">cosmic microwave background (CMB)</a> survey data, repurposing archival observations from the <a href="https://pole.uchicago.edu/public/Home.html" target="_blank" rel="noopener noreferrer">SPT</a>.
+            To do this, I developed a new analysis pipeline, implementing <a href="https://en.wikipedia.org/wiki/Image_subtraction" target="_blank" rel="noopener noreferrer">difference imaging</a> to remove the static sky and a shift-and-stack algorithm to coherently boost the faint signals of moving asteroids.
+            This work resulted in the <a href="https://ui.adsabs.harvard.edu/abs/2022ApJ...936..173C/abstract" target="_blank" rel="noopener noreferrer">first-ever published detections</a> of their kind and established a new methodology that has since been adopted as the standard by <a href="https://ui.adsabs.harvard.edu/abs/2024ApJ...964..138O/abstract" target="_blank" rel="noopener noreferrer">other international collaborations</a>.
+          </p>
+
+          <p>
+            I designed and led a new survey to monitor Sgr A*, the supermassive black hole at the center of our galaxy.
+            This campaign required developing entirely new observing strategies for the SPT.
+            The most critical innovation was a novel real-time calibration system that repurposed an internal instrument source to operate during science observations, allowing real-time detector monitoring.
+            This produced a uniquely long-duration, multi-frequency <a href="https://en.wikipedia.org/wiki/Light_curve" target="_blank" rel="noopener noreferrer">light curve</a> of Sgr A*, providing a rare benchmark for constraining models of black hole accretion physics.
+            Analysis of these data is ongoing.
+          </p>
+
+          <p>
+            <strong>Technical Skills:</strong>
+            Time Series & Fourier Analysis
+            |
+            Large-Scale Data Analysis (&gt;600 TB)
+            |
+            Signal Processing & Noise Characterization
+            |
+            Analysis Pipeline Development
+          </p>
+      </section>
+
+      <section id="operations">
+          <h2>Telescope Operations and Survey Design</h2>
+
+          <h3>
+            <strong>Guiding Question:</strong>
+            How do we strategically design and execute large-scale astronomical surveys to answer new scientific questions?
+          </h3>
+
+          <p>
+            A successful astronomical survey requires a holistic strategy that bridges high-level scientific goals with the operational realities of a complex instrument.
+            My research involves designing these strategies, creating new methods for data collection, and ensuring the quality of final data products.
+          </p>
+          
+          <p>
+            <a href="research.html#transients">My project to monitor Sgr A*</a> with the SPT camera SPT-3G, an instrument not originally designed for frequent targeted observations of a single source, required a rethinking of the telescope's operational mode.
+            I designed the survey from the ground up, developing new schedules and real-time calibration methods to ensure the camera's detectors performed reliably and could be calibrated accurately.
+            This work established a new operational mode for the SPT, demonstrating its capability for targeted time-domain astronomy.
+          </p>
+
+          <p>
+            <a href="research.html#ai-control">My current research on an AI scheduling agent</a> is the next evolution of this work.
+            It aims to transform survey design from a static, human-driven plan into a dynamic, data-driven strategy.
+            The AI agent will learn an optimal observing policy that adapts to changing weather and real-time data quality in order to maximize the scientific potential of the instrument over the course of a survey.
+            This research is a foundational step toward fully autonomous observatories and represents a frontier of data-driven strategic planning in science.
+          </p>
+
+          <p>
+            <strong>Technical Skills:</strong>
+            Experimental Survey Design
+            |
+            Data-Driven Strategic Planning
+            |
+            Systems Thinking & Operations
+            |
+            Instrument Calibration & Data Quality Assurance
+          </p>
+
+      </section>
     </main>
   </div>
 
