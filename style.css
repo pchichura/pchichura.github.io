@@ -382,6 +382,42 @@ p { margin-top: 0; margin-bottom: 1em; }
 .content main li { margin-bottom: 0.1rem; }
 
 /* ======================================================
+   Projects page styles
+   ====================================================== */
+
+.project-entry {
+  margin-top: 10px;
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+}
+
+.project-entry h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.project-figure {
+  margin: 14px 0 0 0;
+}
+
+.project-figure img {
+  display: block;
+  width: 100%;
+  max-width: 760px;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.project-figure figcaption {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* ======================================================
    Talks page styles
    ====================================================== */
 
