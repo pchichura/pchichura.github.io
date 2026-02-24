@@ -236,6 +236,10 @@ html[data-theme="dark"] #theme-toggle { border-color: rgba(255,255,255,0.06); }
 @media (max-width: 800px) {
   .home-columns { flex-direction: column; }
 
+  /* show sidebar first on narrow screens */
+  .main-column { order: 2; }
+  .sidebar { order: 1; }
+
   /* center the sidebar box on narrow screens (text remains left-aligned) */
   .sidebar {
     max-width: 100%;
