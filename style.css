@@ -388,6 +388,18 @@ footer {
 
 p { margin-top: 0; margin-bottom: 1em; }
 
+/* links in content use same colors as navigation */
+.content a,
+main a {
+  color: var(--link);
+  text-decoration: underline;
+  transition: color 200ms ease;
+}
+.content a:hover,
+main a:hover {
+  color: var(--link-hover);
+}
+
 .content main ul,
 .content main ol {
   list-style-position: outside;
