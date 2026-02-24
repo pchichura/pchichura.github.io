@@ -127,6 +127,18 @@ body {
 .header-center h1 { margin: 0; font-size: 1.9rem; }
 .header-center p { margin: 0; font-size: 0.9rem; color: var(--muted); }
 
+/* make site title in header a clean clickable link */
+.site-title-link {
+  color: var(--text);
+  text-decoration: none;
+  transition: color 200ms ease;
+}
+.site-title-link:hover,
+.site-title-link:focus {
+  color: var(--link-hover);
+  outline: none;
+}
+
 /* right area: hamburger, nav links, theme toggle */
 .header-right {
   display: flex;
